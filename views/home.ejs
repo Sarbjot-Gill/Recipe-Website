@@ -1,0 +1,680 @@
+<!
+<html>
+<head>
+
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style rel="stylesheet" href="stylesheets/home.css"></style>
+</head>
+<body >
+<div class="container-fluid">
+    <div id="response"></div>
+</div>
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 text-danger h1">Recette</span>
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active text-danger" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-danger" href="/user-recipe">User Recipes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-danger" href="/about">About Us</a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link text-danger">Contact Us</a>-->
+<!--            </li>-->
+
+
+                    <li class="nav-item dropstart">
+                        <a class="nav-link dropdown-toggle text-danger" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <b><%= name %></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+
+                            <li><a class="dropdown-item text-danger" href="#"><b><%= name %></b></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <button class="btn btn-danger">    <a class="dropdown-item" href="/logout">logout</a></button></li>
+
+
+                        </ul>
+                    </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<div class="card shadow p-3 mb-5 text-bg-dark ">
+    <img src="images/zz.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay h-50 d-flex flex-column justify-content-center ">
+        <h1 class="card-title text-danger ">Check Out  </h1>
+        <h1 class="card-title text-danger "> Our Top </h1>
+        <h1 class="card-title text-danger ">Recipes Below </h1>
+    </div>
+
+    <div class="card-img-overlay h-70 d-flex flex-column justify-content-center ">
+        <p class="card-text text-light"><small>quality recipes from all over the world.  .</small></p>
+        <p class="card-text text-light"><small>Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.  .</small></p>
+    </div>
+</div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="images/1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Zucchini slice</h5>
+                <p class="card-text">The humble zucchini slice is by far recette's most popular recipe. Find out why!</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample11" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample21" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample11">
+                            <div class="card card-body">
+                                5 eggs
+
+                                150g (1 cup) self-raising flour, sifted
+
+                                375g zucchini, grated
+
+                                1 large onion, finely chopped
+
+                                200g rindless bacon, chopped
+
+                                1 cup grated cheddar cheese
+
+                                60ml (1/4 cup) vegetable oil
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample21">
+                            <div class="card card-body">
+                                Step 1
+                                Preheat oven to 170C.
+                                Step 2
+                                Beat the eggs in a large bowl until combined. Add the flour and beat until smooth, then add zucchini , onion , bacon , cheese and oil and stir to combine.
+                                Step 3
+                                Grease and line a 30 x 20cm lamington pan. Pour into the prepared pan and bake in oven for 30 minutes or until cooked through.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Easy Rice</h5>
+                <p class="card-text">Even kids will love this quick and easy fried rice, perfect for a weeknight meal. See notes section for Low FODMAP diet tip.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample12" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample22" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample12">
+                            <div class="card card-body">
+                                1 cup white long-grain rice
+
+                                2 tsp vegetable oil
+
+                                2 eggs, lightly whisked
+
+                                2 bacon rashers, chopped
+
+                                1 carrot, peeled and grated
+
+                                2 shallots, trimmed, finely sliced
+
+                                1/2 cup frozen peas, thawed (see notes for Low FODMAP substitution)
+
+                                1 tbsp soy sauce
+
+                                Sesame seeds, to serve
+
+                                Shallots, sliced, extra, to serve
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample22">
+                            <div class="card card-body">
+                                Step 1
+                                Cook the rice in a large saucepan of boiling water for 12 minutes or until tender. Drain and leave to cool.
+                                Step 2
+                                Heat oil in non-stick wok or large frying pan over medium heat. Add eggs . Swirl over base to form an omelette. Cook for 2 minutes or until set. Transfer to a chopping board. Set aside to cool slightly. Cut into short strips.
+                                Step 3
+                                Add bacon to wok. Cook 4 minutes until light golden. Add carrot . Stir fry 1 minute. Add shallots , peas and rice. Cook, stirring, 3-4 minutes. Add egg and soy sauce . Stir until heated through. Sprinkle with sesame seeds and top with extra shallots . Serve immediately.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Classic shepherd's pie</h5>
+                <p class="card-text">You can't go past a classic shepherd's pie for a satisfying Sunday lunch.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample13" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample23" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample13">
+                            <div class="card card-body">
+                                1 tbsp olive oil
+
+                                1 brown onion, halved, finely chopped
+
+                                1 carrot, peeled, finely chopped
+
+                                2 celery sticks, trimmed, finely chopped
+
+                                1 tbsp tomato paste
+
+                                500g lamb mince
+
+                                Salt & freshly ground black pepper
+
+                                2 tbsp plain flour
+
+                                500ml (2 cups) Massel beef style stock
+
+                                1 tbsp worcestershire sauce
+
+                                1 bay leaf
+
+                                4 (about 200g each) desiree potatoes, peeled, chopped
+
+                                40g butter
+
+                                125ml (1/2 cup) milk
+
+                                Melted butter, to brush
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample23">
+                            <div class="card card-body">
+                                Step 1
+                                Heat oil in a large saucepan over medium-high heat. Add onion , carrot and celery and cook, stirring, for 5 minutes or until soft. Add lamb mince and cook, stirring to break up any lumps, for 5 minutes or until lamb changes colour.
+                                Step 2
+                                Add the flour and cook, stirring, for 2 minutes or until combined. Add stock , bay leaf , Worcestershire sauce and tomato paste . Bring to the boil. Reduce heat to low and cook, stirring occasionally, for 30 minutes or until sauce thickens. Taste and season with salt and pepper .
+                                Step 3
+                                Meanwhile: cook potato in a saucepan of salted boiling water for 15 minutes or until tender. Drain well. Return to the pan with the butter . Use a potato masher or fork to mash until smooth. Add milk and use a wooden spoon to stir until combined. Taste and season with salt and pepper.
+                                Step 4
+                                Preheat oven to 200C. Spoon lamb mixture into a 2L (8-cup) capacity ovenproof baking dish, or use four individual ovenproof serving dishes. Top with mashed potato and use a fork to spread over lamb mixture. Brush with butter . Bake in preheated oven for 20 minutes or until mashed potato is golden brown. Serve immediately
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Basic chicken and vegetable stir-fry</h5>
+                <p class="card-text">For a healthy weeknight meal, you can rely on this basic stir-fry with crunchy bean sprouts, tender chicken and tasty vegies.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample14" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample24" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample14">
+                            <div class="card card-body">
+                                2 tbsp peanut oil (see note)
+
+                                3 Lilydale Free Range Chicken Breast, trimmed, cut across the grain into thin strips
+
+                                1 brown onion, cut into thin wedges
+
+                                1 red capsicum, deseeded, cut into thin strips
+
+                                250g button mushrooms or mushroom caps, sliced
+
+                                1 bunch broccolini, cut into 4cm lengths
+
+                                2cm piece fresh ginger, peeled, finely grated or chopped
+
+                                2 garlic cloves, finely chopped
+
+                                2 fresh birdseye chillies, deseeded if desired, thinly sliced
+
+                                2 tbsp salt-reduced soy sauce
+
+                                1 1/2 tbsp oyster sauce
+
+                                1 tbsp water
+
+                                100g bean sprouts, to serve
+
+                                Coriander leaves, to serve
+
+                                Cooked white rice or noodles, to serve
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample24">
+                            <div class="card card-body">
+                                Step 1
+                                Heat wok over high heat for about 1 minute (see note). Add 1 tablespoon of the oil and swirl it around the wok to coat the entire cooking surface and heat for 30-60 seconds or until very hot. Add half the chicken strips and stir-fry for 1-2 minutes or until the chicken is sealed and just cooked through (see note). Transfer the chicken to a plate and set aside. Add about half the remaining peanut oil to the wok and repeat the process with the remaining chicken strips.
+                                Step 2
+                                Add the remaining oil to the wok and heat over high heat until hot. Add the onion and capsicum and stir-fry for 2 minutes (see note).
+                                Step 3
+                                Add the mushrooms and broccolini and stir-fry for a further 2 minutes. Add the ginger , garlic and chillies . Season with salt and stir-fry for 1 minute or until aromatic (see note).
+                                Step 4
+                                Add the soy sauce , oyster sauce and water and toss for about 1 minute. Return the chicken to the wok and stir until the vegetables and chicken are coated with the sauces and the vegetables are tender crisp.
+                                Step 5
+                                Remove the wok from the heat, toss through the bean sprouts and coriander and serve the stir-fry immediately with cooked rice or noodles .
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/5.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Corn fritters</h5>
+                <p class="card-text">Australia's best corn fritter! With a crunchy crust and fluffy inside, these corn fritters are quick to make and delicious to eat.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample15" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample25" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample15">
+                            <div class="card card-body">
+                                1 cup self-raising flour
+
+                                2 eggs
+
+                                1/3 cup milk
+
+                                2 x 420g cans corn kernels, drained
+
+                                2 tbsp chopped chives
+
+                                100g fetta, crumbled
+
+                                30g piece cold butter
+
+                                1 small avocado, cut into wedges
+
+                                30g baby rocket
+
+                                2 tbsp Coles sweet chilli sauce, to serve
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample25">
+                            <div class="card card-body">
+                                Step 1
+                                Place flour into a large mixing bowl and make a well in the centre. Use a fork to whisk eggs and milk in a jug and pour gradually into the flour, stirring gently to combine. Fold in corn , chives and fetta . Don’t over-mix or the fritters will be tough.
+                                Step 2
+                                Wrap butter in a piece of paper towel. Heat a large frying pan over medium heat and wipe with the butter to grease. Drop 1/4 cupfuls of mixture into the pan (you’ll have to cook in batches). Cook for about 2-3 mins, until golden brown underneath, then turn and cook the other side. Repeat with the butter and fritter mixture.
+                                Step 3
+                                Serve fritters with avocado , rocket and sweet chilli sauce .
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/6.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Caramel drizzle churro cake</h5>
+                <p class="card-text">The churros in this cake are baked not fried, so you can tell yourself this is a 'healthier' version when you're devouring the layers of creamy, fluffy, caramel goodness.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample15" role="button" aria-expanded="false" aria-controls="multiCollapseExample16">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample25" aria-expanded="false" aria-controls="multiCollapseExample26">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample16">
+                            <div class="card card-body">
+                                120g unsalted butter, chopped
+
+                                2 tbsp caster sugar
+
+                                1/2 tsp salt
+
+                                150g (1 cup) plain flour
+
+                                4 eggs
+
+                                750ml (3 cups) thickened cream
+
+                                2 tsp ground cinnamon
+
+                                310ml (1 1/4 cup) caramel spread
+                                cinnamon sugar
+
+                                155g (3/4 cup) caster sugar
+
+                                3 tsp ground cinnamon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample26">
+                            <div class="card card-body">
+                                Step 1
+                                Preheat oven to 180°C/160°C fan forced. Bring 1 cup (250ml) water, butter , sugar and salt to the boil in a saucepan over medium heat, stirring constantly. Add flour and stir for 1 minute or until dough comes away from the side of the pan. Remove from heat. Set aside for 10 minutes to cool slightly.
+                                Step 2
+                                Transfer dough to a large bowl. Use electric beaters to beat the eggs , 1 at a time, into the dough, beating well after each addition. Spoon into a large piping bag fitted with a 1.5cm fluted nozzle.
+                                Step 3
+                                To make the cinnamon sugar, combine the sugar and cinnamon in a small bowl.
+                                Step 4
+                                Line 3 large baking trays with baking paper. Trace around the base of a 15cm plate to make 5 circles on the paper. Turn paper ink-side down. Pipe a ring of churro dough around edge of 1 circle. Continue to pipe rings of dough inside the larger ring, leaving a small gap between each ring, until circle is full. Sprinkle with 1 tbsp of cinnamon sugar. Repeat with remaining churro dough and cinnamon sugar to make 5 cakes.
+                                Step 5
+                                Bake for 35 minutes or until golden brown. Flip churro discs over. Bake for a further 30 minutes or until golden and cooked through. Lightly spray top of each churro disc with oil and sprinkle each with 1 tbs cinnamon sugar. Set aside to cool completely.
+                                Step 6
+                                Use electric beaters to beat the cream and cinnamon in a bowl until firm peaks form. Place 1 churro disc on a serving plate. Top with one-fifth of the cinnamon cream and drizzle with 60ml (1/4 cup) caramel. Repeat with remaining churro discs, cinnamon cream and caramel. Serve the same day.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/7.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Strawberry shortcake trifles</h5>
+                <p class="card-text">You won't be able to resist these scrumptious strawberry shortcake trifles! Save two (or three) for yourself!</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample17" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample27" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample17">
+                            <div class="card card-body">
+                                500g strawberries, halved
+
+                                1/2 cup (110g) caster sugar
+
+                                2/3 cup (160ml) amaretto liqueur, dessert wine or apple juice
+
+                                1/4 x 450g pkt Coles Make At Home Double Sponge Unfilled Cake
+
+                                600g strawberry-flavoured yoghurt
+
+                                250g mascarpone
+
+                                Halved strawberries, extra, to serve
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample27">
+                            <div class="card card-body">
+                                Step 1
+                                Preheat oven to 180°C. Line a roasting pan with baking paper. Arrange the strawberry in a single layer in the lined pan. Sprinkle with half the sugar and drizzle with 2 tbs of liqueur, wine or apple juice. Roast for 15 mins or until the strawberry begins to soften. Set aside to cool completely.
+                                Step 2
+                                Meanwhile, combine the remaining sugar and liqueur, wine or apple juice in a saucepan over low heat. Cook, stirring, for 5 mins or until the sugar dissolves and mixture thickens slightly. Set the syrup aside to cool slightly.
+                                Step 3
+                                Use a large serrated knife to split the cake in half horizontally. Use a 7cm pastry cutter to cut 12 discs from the cake halves. Brush both sides of cake discs with the syrup.
+                                Step 4
+                                Place the yoghurt and mascarpone in a medium bowl. Stir until the mixture is well combined.
+                                Step 5
+                                Spoon one-third of the yoghurt mixture evenly among serving glasses. Top each with a cake disc. Spoon half the strawberry mixture over the cake discs in the glasses. Drizzle with a little of the syrup. Continue layering with the remaining yoghurt mixture, cake discs, strawberry mixture and syrup, finishing with the yoghurt mixture. Decorate the trifles with the extra strawberry to serve.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/8.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Espresso martini hedgehog cake</h5>
+                <p class="card-text">Coffee cake just got a whole lot more wow – milk coffee biscuits layered with chocolate and topped in a coffee liqueur cream and syrup then scattered with choc-covered hazelnuts. Is there really anything more to say?</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample18" role="button" aria-expanded="false" aria-controls="multiCollapseExample18">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample28" aria-expanded="false" aria-controls="multiCollapseExample28">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample18">
+                            <div class="card card-body">
+                                3 x 100g pkt Lindt Excellence Extra Creamy Milk chocolate, chopped
+
+                                2 x 100g pkt Lindt Excellence 70% Cocoa Dark chocolate, chopped
+
+                                150g unsalted butter, chopped
+
+                                140g golden syrup
+
+                                2 tsp vanilla extract
+
+                                125ml (1/2 cup) coffee-flavoured liqueur
+
+                                25 (about 200g) milk coffee biscuits
+
+                                125ml (1/2 cup) espresso coffee
+
+                                55g (1/4 cup) brown sugar
+
+                                250ml (1 cup) thickened cream
+
+                                Hazelnut-filled chocolates, halved, to decorate
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample28">
+                            <div class="card card-body">
+                                Step 1
+                                Line a 7cm-deep, 10 x 20cm (base measurement) loaf pan with baking paper, allowing the paper to overhang the long sides.
+                                Step 2
+                                Place the milk and dark chocolate, butter, golden syrup and 1 tsp vanilla in a large heatproof bowl set over a saucepan of simmering water (make sure the bowl doesn’t touch the water). Heat, stirring gently, for 5 minutes or until the chocolate is melted and the mixture is smooth. Remove from heat. Stir in half the liqueur. Set aside for 15-20 minutes to cool and thicken slightly.
+                                Step 3
+                                Cut 5 biscuits in half crossways. Add heaped 1/3 cupful of chocolate mixture to prepared pan. Spread evenly. Place 4 whole biscuits and 2 halves in an even layer on top, pressing gently to secure. Top with another heaped 1/3 cupful of chocolate mixture. Use flat-bladed palette knife to gently spread over biscuits to completely cover. Repeat layering with the remaining biscuits and chocolate mixture, finishing with chocolate mixture. Cover with overhanging paper then cover pan with plastic wrap. Place in fridge for 4 hours or overnight to set.
+                                Step 4
+                                Meanwhile, combine the coffee, sugar and remaining vanilla in a small saucepan over low heat. Stir for 1-2 minutes or until sugar dissolves. Increase heat to medium and bring to a simmer. Cook, without stirring, for 5 minutes or until the syrup thickens slightly. Remove from heat. Set aside to cool completely.
+                                Step 5
+                                Use electric beaters to beat the cream and remaining liqueur in a bowl until soft peaks form. Transfer cake to a plate. Decorate with the coffee cream, espresso syrup and hazelnut chocolates to serve.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="images/9.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Mexican-spiced pork roast</h5>
+                <p class="card-text">Curtis Stone's Mexican-spiced pork roast is a delicious way to feed your family.</p>
+                <p>
+                    <a class="btn btn-danger" data-bs-toggle="collapse" href="#multiCollapseExample19" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Ingredients</a>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample29" aria-expanded="false" aria-controls="multiCollapseExample2">Recipe</button>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample19">
+                            <div class="card card-body">
+                                1/2 tsp Coles Brand Ground Chilli or chopped Coles Brand Dried Chilli Flakes
+
+                                1/2 tsp Coles Brand Ground Cumin Seeds
+
+                                3/4 tsp salt
+
+                                1/2 tsp freshly ground black pepper
+
+                                2 tsp olive oil
+
+                                550g Coles Pork Easy Carve Shoulder Roast
+
+                                8 Mission Burrito Tortillas
+
+                                1 tbsp olive oil
+
+                                1 cup Coles Brand Long Grain White Rice
+
+                                1/2 tsp Coles Brand Ground Coriander Seeds
+
+                                1/2 tsp freshly ground pepper
+
+                                1 1/2 cups water
+
+                                150 g of canned Coles Brand Italian Diced Tomatoes
+
+                                2 tsp fine lime zest (from 1 lime)
+
+                                180g very thinly sliced drumhead cabbage
+
+                                1 tbsp coarsely chopped fresh coriander leaves
+
+                                2 tbsp fresh lime juice (from 1 lime)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample29">
+                            <div class="card card-body">
+                                Step 1
+                                To roast the pork, position a rack in the centre of the oven and preheat the oven to 180C or 160C fan-forced.
+                                Step 2
+                                In a small bowl, mix the chilli, cumin, salt, and pepper. Using your hands, rub the spice mixture all over the pork, then coat pork with the oil. Place pork in a medium roasting pan.
+                                Step 3
+                                Roast the pork for 45 mins. Reduce the heat to 150C or 130C fan-forced and continue to roast pork for 2-2 1/2 hrs, or until tender. Place the roasted pork on a carving board and rest for 10 mins before serving.
+                                Step 4
+                                Meanwhile, to cook the rice, heat a medium heavy-based saucepan over medium-high heat. Add the oil, then add the rice and stir for 5 mins, or until the rice is pale golden. Stir in the coriander, salt and pepper, then stir in the water and tomatoes. Bring to a simmer. Reduce heat to medium-low, cover, and cook for 20 mins, or until all the liquid is absorbed and the rice is tender. Remove pan from heat and stand, covered, for 10 mins. Using a fork, fluff the rice and mix in the lime zest.
+                                Step 5
+                                To make the slaw, in a large bowl, toss the cabbage, fresh coriander, and lime juice just before serving. Season to taste with salt and pepper.
+                                Step 6
+                                Heat a medium frying pan over high heat. Heat the tortillas in the pan, one at a time, for 30 secs per side, or until hot. As the tortillas are heated, wrap them in a clean tea towel to keep warm.
+                                Step 7
+                                Using a large sharp knife, slice the pork into 4 pieces and place a piece on each plate. Serve with the rice, slaw and tortillas. You can break up the pork and divide between the 2 tortillas per person.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid my-5">
+
+    <footer class="bg-dark text-center text-lg-start text-white">
+
+        <div class="container p-4">
+
+            <div class="row mt-4">
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Check Out our Recipe</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/user-recipe" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>User Recipes</a>
+                        </li>
+                        <li>
+                            <a href="/home" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Our Recipes</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Reach Out To us</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>About us</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Our Team</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a  class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>CEO : Redsky</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Our HeadQuarters</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a  class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi consequatur debitis distinctio doloribus eveniet, hic id illum itaque iusto magni maiores nihil praesentium quisquam sint sit tenetur voluptates!</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            Hehehe
+
+        </div>
+    </footer>
+
+</div>
+
+
+<!--<script src="js/jquery.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+
+<!--<script src="dist/jquery.validate.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<script src="javascripts/home.js"></script>
+
+</body>
+</html>

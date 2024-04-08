@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style rel="stylesheet" href="stylesheets/home.css"></style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function getUsersData() {
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                     console.log(this.response);
+                     console.log(JSON.parse(this.response));
+
+                    var response = JSON.parse(this.response);
+                    // console.log(response.length);
+
+                    var tableTag = `<table class="table table-dark table-hover">`;
+                    tableTag += `<thead><tr><th>Sr. No.</th><th>Username</th><th>Email</th><th>Action</th></tr></thead>`;
+
+                    tableTag += `<tbody>`;
+
+                    response.forEach(function (value, index) {
+                        // console.log(value);
+                        // console.log(index);
+                        tableTag += `<tr>`;
+                        tableTag += `<td>${index + 1}</td>`;
+                        tableTag += `<td>${value.username}</td>`;
+                        tableTag += `<td>${value.email}</td>`;
+
+
+                        tableTag += `<td>`;
+                        tableTag += `<button onclick="deleteUser('${value.username}')" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-alt"></i></button>`;
+                        // tableTag += `<button type="button" class="ms-3 btn btn-sm btn-primary">Update</button>`;
+                        tableTag += `<button onclick="updateUser('${value.username}', '${value.email}'" type="button" data-bs-toggle="modal" data-bs-target="#userUpdateModal"
+                                    class="ms-3 btn btn-sm btn-primary"><i class="fa fa-edit"></i></button>`;
+                        tableTag += `</td>`;
+
+                        tableTag += `</tr>`;
+                    });
+
+
+                    tableTag += `</tbody>`;
+
+                    tableTag += `</table>`;
+
+                    document.getElementById("usersData").innerHTML = tableTag;
+
+                }
+            }
+            http.open("GET", "/get-users-data", true);
+            http.send();
+        }
+
+        function deleteUser(username) {
+            // console.log(username);
+
+            // confirm("Are you sure to delete?")
+
+            if (confirm("Are you sure to delete?")) {
+                var http = new XMLHttpRequest();
+                http.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        // console.log(this.response);
+                        alert(this.response);
+                        getUsersData();
+                    }
+                }
+                http.open("GET", `/delete-user?abc=${username}`, true);
+                http.send();
+            }
+        }
+
+        function updateUser(username, email, address) {
+            // console.log(username, email, address);
+
+            document.getElementById("usernameEdit").value = username;
+            document.getElementById("emailEdit").value = email;
+
+        }
+
+        function editUserDetails() {
+            var username = document.getElementById("usernameEdit").value;
+            var email = document.getElementById("emailEdit").value;
+
+
+            var formData = new FormData();
+            formData.append("username", username);
+            formData.append("email", email);
+
+
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // console.log(this.response);
+                    alert(this.response);
+                    getUsersData();
+                }
+            }
+            http.open("POST", "/update-user-action", true);
+            http.send(formData);
+        }
+    </script>
+</head>
+<body onload="getUsersData()">
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 text-danger h1">Recette</span>
+
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active text-danger" aria-current="page" href="/admin-home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-danger" href="/admin-users">Users</a>
+            </li>
+
+
+
+            <li class="nav-item dropstart">
+                <a class="nav-link dropdown-toggle text-danger" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <b><%= name %></b>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+
+                    <li><a class="dropdown-item text-danger" href="#"><b><%= name %></b></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <button class="btn btn-danger">    <a class="dropdown-item" href="/admin-logout">logout</a></button></li>
+
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container py-5">
+
+
+    <div id="usersData"></div>
+</div>
+
+<div class="modal fade" id="userUpdateModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Edit User</h4>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" readonly id="usernameEdit" class="form-control"
+                               placeholder="Enter Username">
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" id="emailEdit" class="form-control" placeholder="Enter Email">
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <button type="button" onclick="editUserDetails()" class="btn btn-danger">UPDATE</button>
+                    </div>
+                </form>
+
+                <div id="responseEdit"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid my-5">
+
+    <footer class="bg-dark text-center text-lg-start text-white">
+
+        <div class="container p-4">
+
+            <div class="row mt-4">
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Check Out our Recipe</h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/user-recipe" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>User Recipes</a>
+                        </li>
+                        <li>
+                            <a href="/home" class="text-white"><i class="fas fa-book fa-fw fa-sm me-2"></i>Our Recipes</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Reach Out To us</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!" class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="fas fa-backspace fa-fw fa-sm me-2"></i>About us</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Regulations</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-white"><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Terms and conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Our Team</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a  class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>CEO : Redsky</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Our HeadQuarters</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a  class="text-white"><i class="fas fa-shipping-fast fa-fw fa-sm me-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi consequatur debitis distinctio doloribus eveniet, hic id illum itaque iusto magni maiores nihil praesentium quisquam sint sit tenetur voluptates!</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            Hehehe
+
+        </div>
+    </footer>
+
+</div>
+</body>
+</html>
