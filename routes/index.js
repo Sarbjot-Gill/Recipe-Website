@@ -470,8 +470,7 @@ router.post("/admin-sign",(req , res) =>{
         connection.query(checkUserExist, function (error, data) {
             if (error) throw error;
             if (data.length > 0) {
-                // res.send("exist");
-                // console.log("exist");
+               
                 req.flash('error', 'user alreadu exits');
                 res.redirect('admin-signup')
             } else {
